@@ -3,7 +3,9 @@
 'use strict'
 
 const ytdl = require('ytdl-core')
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const FFmpeg = require('fluent-ffmpeg')
+FFmpeg.setFfmpegPath(ffmpegPath);
 const { PassThrough } = require('stream')
 const fs = require('fs')
 

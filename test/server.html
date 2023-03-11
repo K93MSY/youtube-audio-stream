@@ -9,7 +9,19 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <audio src="youtube.com/watch?v=s-mOy8VUEBk" autoplay controls preload="metadata">
+    <input type="text" id="yt-link">
+    <button onclick="run()">Play</button>
+    <audio src="/youtube.com/watch?v=F5GjEwI8wEA" controls id="stream">
     </audio>
+    <a href="/youtube.com/watch?v=F5GjEwI8wEA" download>
+      Download Audio
+    </a>
   </body>
+  <script>
+    const run = () =>{
+      console.log(document.getElementById("yt-link").value)
+      document.getElementById("stream").setAttribute('src', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
+      document.getElementById("stream").setAttribute('href', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
+    }
+  </script>
 </html>

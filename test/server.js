@@ -14,6 +14,8 @@ function demo (req, res) {
     res.end('pong')
   } else if (/youtube/.test(req.url)) {
     stream('http:/' + req.url).pipe(res)
+  }else{
+    res.end("404")
   }
 }
 if (!process.env.CI) {
