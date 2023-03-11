@@ -22,7 +22,7 @@
       console.log(document.getElementById("yt-link").value)
       document.getElementById("stream").setAttribute('src', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
       document.getElementById("dl-link").setAttribute('href', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
-      document.getElementById("dl-link").setAttribute('download', `./yas-${document.getElementById("yt-link").value.substring(document.getElementById("yt-link").value.indexOf("v=")).mp3}`);
+      document.getElementById("dl-link").setAttribute('download', `./yas-${document.getElementById("yt-link").value.substring(document.getElementById("yt-link").value.indexOf("v=")+2)}.mp3`);
     }
   </script>
 </html>
