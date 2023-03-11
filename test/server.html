@@ -13,7 +13,7 @@
     <button onclick="run()">Play</button>
     <audio src="/youtube.com/watch?v=F5GjEwI8wEA" controls id="stream">
     </audio>
-    <a href="/youtube.com/watch?v=F5GjEwI8wEA" download>
+    <a href="/youtube.com/watch?v=F5GjEwI8wEA" download id="dl-link">
       Download Audio
     </a>
   </body>
@@ -21,7 +21,8 @@
     const run = () =>{
       console.log(document.getElementById("yt-link").value)
       document.getElementById("stream").setAttribute('src', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
-      document.getElementById("stream").setAttribute('href', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
+      document.getElementById("dl-link").setAttribute('href', `./${document.getElementById("yt-link").value.replace( /https:|www./g , "" )}`);
+      document.getElementById("dl-link").setAttribute('download', `./yas-${document.getElementById("yt-link").value.substring(document.getElementById("yt-link").value.indexOf("v=")).mp3}`);
     }
   </script>
 </html>
